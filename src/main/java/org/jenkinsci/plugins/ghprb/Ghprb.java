@@ -16,47 +16,8 @@ import com.cloudbees.plugins.credentials.domains.URIRequirementBuilder;
 import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl;
 
 import hudson.Util;
-import hudson.model.AbstractBuild;
-import hudson.model.AbstractProject;
-import hudson.model.Cause;
-import hudson.model.Item;
-import hudson.model.Result;
-import hudson.model.Run;
-import hudson.model.Saveable;
-import hudson.model.TaskListener;
-import hudson.security.ACL;
-import hudson.util.DescribableList;
-import hudson.util.Secret;
-
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.PredicateUtils;
-import org.apache.commons.collections.functors.InstanceofPredicate;
-import org.apache.commons.lang.StringUtils;
 import org.jenkinsci.plugins.ghprb.extensions.GhprbExtension;
 import org.jenkinsci.plugins.ghprb.extensions.GhprbExtensionDescriptor;
-import org.jenkinsci.plugins.ghprb.extensions.GhprbProjectExtension;
-import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl;
-import org.kohsuke.github.GHCommitState;
-import org.kohsuke.github.GHIssue;
-import org.kohsuke.github.GHUser;
-
-import java.net.URI;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Pattern;
-
-/**
- * @author janinko
- */
-public class Ghprb {
-    private static final Logger logger = Logger.getLogger(Ghprb.class.getName());
-    public static final Pattern githubUserRepoPattern = Pattern.compile("^(http[s]?://[^/]*)/([^/]*/[^/]*).*");
-
-    private final GhprbTrigger trigger;
-
-    public Ghprb(GhprbTrigger trigger) {
-        this.trigger = trigger;
     }
 
     public void addWhitelist(String author) {
